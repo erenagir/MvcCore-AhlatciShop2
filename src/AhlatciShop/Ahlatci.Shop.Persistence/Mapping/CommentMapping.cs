@@ -42,7 +42,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
             builder.HasOne(x => x.Customer)
                 .WithMany(x => x.Comments)
                 .HasForeignKey(x => x.Customerıd)
-                .HasConstraintName("COMMETS_CUSTOMER_CUSTOMER_ID");
+                .HasConstraintName("COMMET_CUSTOMER_CUSTOMER_ID");
 
 
 

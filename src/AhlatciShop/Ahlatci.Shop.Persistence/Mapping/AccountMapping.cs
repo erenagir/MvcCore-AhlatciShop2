@@ -34,7 +34,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
 
             builder.HasOne(x => x.Customer)
                 .WithOne(x => x.Account);
-                
+            builder.ToTable("ACCOUNTS");
         }
     }
 }

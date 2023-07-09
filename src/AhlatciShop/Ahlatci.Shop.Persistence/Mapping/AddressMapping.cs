@@ -21,7 +21,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
                  .HasColumnType("nvarchar(max)")
                  .HasColumnOrder(3);
 
-            
+            builder.ToTable("ADDRESSES");
 
         }
     }

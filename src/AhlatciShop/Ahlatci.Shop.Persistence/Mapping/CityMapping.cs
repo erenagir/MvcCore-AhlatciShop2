@@ -9,16 +9,17 @@ using System.Threading.Tasks;
 
 namespace Ahlatci.Shop.Persistence.Mapping
 {
-    public class CategoryMapping : AuditableEntityMapping<Category>
+    internal class CityMapping : BaseEntityMapping<City>
     {
-        public override void ConfigureDerivedEntity(EntityTypeBuilder<Category> builder)
+        public override void ConfigureDerivedEntity(EntityTypeBuilder<City> builder)
         {
             builder.Property(x => x.Name)
-                .HasColumnType("nvarchar(100)")
                 .HasColumnName("NAME")
-                .HasColumnOrder(2);
+                .HasColumnType("nvarchar(20)")
+                .HasColumnOrder(2)
+                .IsRequired();
+            builder.ToTable("CITIES");
 
-            builder.ToTable("CATEGORIES");
         }
     }
 }
