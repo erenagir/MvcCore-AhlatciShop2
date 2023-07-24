@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Ahlatci.Shop.Domain\Ahlatci.Shop.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
