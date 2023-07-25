@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci2\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\Ahlatci.Shop.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\Ahlatci.Shop.Infrastructure.csproj",
       "projectName": "Ahlatci.Shop.Infrastructure",
-      "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci2\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\Ahlatci.Shop.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\Ahlatci.Shop.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\agir_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci2\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -8,11 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Ahlatci.Shop.Domain\Ahlatci.Shop.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Absttraction\" />
-    <Folder Include="Services\NewFolder\" />
+    <ProjectReference Include="..\Ahlatci.Shop.Persistence\Ahlatci.Shop.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

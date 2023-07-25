@@ -1,0 +1,12 @@
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\bin\Debug\net7.0\Ahlatci.Shop.Domain.deps.json
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\bin\Debug\net7.0\Ahlatci.Shop.Domain.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\bin\Debug\net7.0\Ahlatci.Shop.Domain.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.csproj.AssemblyReference.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.AssemblyInfoInputs.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.AssemblyInfo.cs
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.csproj.CoreCompileInputs.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\refint\Ahlatci.Shop.Domain.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\Ahlatci.Shop.Domain.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\obj\Debug\net7.0\ref\Ahlatci.Shop.Domain.dll

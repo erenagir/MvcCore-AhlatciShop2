@@ -10,8 +10,14 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.18.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ahlatci.Shop.Aplication\Ahlatci.Shop.Aplication.csproj" />
+    <ProjectReference Include="..\Ahlatci.Shop.Persistence\Ahlatci.Shop.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

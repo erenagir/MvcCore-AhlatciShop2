@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MNuepdT+sTuTa46JanANPMBgUGq7URxta5f8k167gWhQ849vMzB11TXAIOiXjQp2Ke6nYhKCmChZxDqrPRQz0w==",
+  "dgSpecHash": "234dfnQ0VQLok1jmvMDhuw4HcUmjBeQyYVfxHmX1WhZ8V9vVzQFUT9uAeRd2OOETYvojF2zIFgGKlH0kzC5Rkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci2\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.8\\microsoft.entityframeworkcore.7.0.8.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.8\\microsoft.entityframeworkcore.abstractions.7.0.8.nupkg.sha512",
