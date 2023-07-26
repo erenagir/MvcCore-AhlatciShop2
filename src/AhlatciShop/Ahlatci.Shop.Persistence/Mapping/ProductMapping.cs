@@ -23,7 +23,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
                 .HasColumnOrder(3);
 
             builder.Property(x => x.Detail)
-               .HasColumnName("NAME")
+               .HasColumnName("DETAIL")
                .HasColumnType("nvarchar(max)")
                .HasColumnOrder(4);
 

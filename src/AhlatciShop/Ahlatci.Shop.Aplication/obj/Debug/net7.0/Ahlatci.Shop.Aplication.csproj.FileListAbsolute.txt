@@ -13,3 +13,5 @@ C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciSho
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\refint\Ahlatci.Shop.Aplication.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\Ahlatci.Shop.Aplication.pdb
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\ref\Ahlatci.Shop.Aplication.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.pdb

@@ -1,0 +1,12 @@
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\bin\Debug\net7.0\Ahlatci.Shop.Infrastructure.deps.json
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\bin\Debug\net7.0\Ahlatci.Shop.Infrastructure.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\bin\Debug\net7.0\Ahlatci.Shop.Infrastructure.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.AssemblyInfo.cs
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\refint\Ahlatci.Shop.Infrastructure.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\Ahlatci.Shop.Infrastructure.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Infrastructure\obj\Debug\net7.0\ref\Ahlatci.Shop.Infrastructure.dll

@@ -1,3 +1,5 @@
+using Ahlatci.Shop.Aplication.Services.Abstraction;
+using Ahlatci.Shop.Aplication.Services.Implementation;
 using Ahlatci.Shop.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +17,8 @@ builder.Services.AddDbContext<AhlatciContext>(opt =>
     //connection sýnýfýna özel
     opt.UseSqlServer(builder.Configuration.GetConnectionString("AhlatciShop"));
 });
+// business service Registiration
+builder.Services.AddScoped<ICategoryService,CategorySevice>();
 
 var app = builder.Build();
 
