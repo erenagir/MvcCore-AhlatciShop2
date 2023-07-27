@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Ahlatci.Shop.Persistence.Migrations
 {
     /// <inheritdoc />
-    public partial class firscreate : Migration
+    public partial class firstCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,8 +37,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NAME = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -73,8 +73,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     UNIT_IN_STOCK = table.Column<int>(type: "int", nullable: false),
                     UNIT_PRICE = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -126,8 +126,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     BIRTHDATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     GENDER = table.Column<int>(type: "int", nullable: false),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -159,8 +159,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     ORDER = table.Column<int>(type: "int", nullable: false),
                     IS_THUMBNAIL = table.Column<bool>(type: "bit", nullable: true),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -188,8 +188,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     DİSLIKE_COUNT = table.Column<int>(type: "int", nullable: false),
                     IS_APPROVED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0"),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -221,8 +221,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     ORDER_DATE = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValueSql: "getdate()"),
                     ORDER_STATUS = table.Column<int>(type: "int", nullable: false),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },
@@ -253,8 +253,8 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     QUANTITY = table.Column<int>(type: "int", nullable: false),
                     TOTAL_PRICE = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     CREATED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CREATED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MODİFİED_BY = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CREATED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
+                    MODİFİED_BY = table.Column<string>(type: "nvarchar(10)", nullable: true),
                     MODİFİED_DATE = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IS_DELETED = table.Column<bool>(type: "bit", nullable: true, defaultValueSql: "0")
                 },

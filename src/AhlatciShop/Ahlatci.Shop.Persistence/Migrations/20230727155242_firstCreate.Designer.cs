@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Ahlatci.Shop.Persistence.Migrations
 {
     [DbContext(typeof(AhlatciContext))]
-    [Migration("20230726153405_firscreate")]
-    partial class firscreate
+    [Migration("20230727155242_firstCreate")]
+    partial class firstCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -124,8 +124,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -148,8 +147,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(2);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -202,8 +200,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -253,8 +250,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(2);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -298,8 +294,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -351,8 +346,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(6);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -387,8 +381,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -422,8 +415,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(5);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -452,8 +444,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -485,8 +476,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(5);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -525,8 +515,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -565,8 +554,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(6);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 
@@ -593,8 +581,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(26);
 
                     b.Property<string>("CreatedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("CREATED_BY")
                         .HasColumnOrder(27);
 
@@ -632,8 +619,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(2);
 
                     b.Property<string>("modifiedBy")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(10)")
                         .HasColumnName("MODİFİED_BY")
                         .HasColumnOrder(28);
 

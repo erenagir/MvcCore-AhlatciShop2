@@ -28,12 +28,17 @@ namespace Ahlatci.Shop.Persistence.Mapping
                 .HasColumnOrder(26);
             builder.Property(x => x.CreatedBy)
                .HasColumnName("CREATED_BY")
+               .HasColumnType("nvarchar(10)")
+               .IsRequired(false)
                .HasColumnOrder(27);
             builder.Property(x => x.modifiedBy)
                .HasColumnName("MODİFİED_BY")
+               .HasColumnType("nvarchar(10)")
+               .IsRequired(false)
                .HasColumnOrder(28);
             builder.Property(x => x.ModifiedDate)
                .HasColumnName("MODİFİED_DATE")
+               
                .HasColumnOrder(29);
 
             builder.Property(x => x.IsDeleted)
