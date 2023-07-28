@@ -80,3 +80,5 @@ C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciSho
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Mono.TextTemplating.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\System.CodeDom.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\AutoMapper.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
