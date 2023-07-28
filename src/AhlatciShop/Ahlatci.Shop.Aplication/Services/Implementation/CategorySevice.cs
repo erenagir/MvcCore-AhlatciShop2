@@ -46,12 +46,12 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return categoryDtos;
         }
 
-        public async Task<CategoryDto> GetCategoryById(int id)
+        public async Task<CategoryDto> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM)
         {
-            var categoryExists = await _context.Categories.AnyAsync(x => x.Id == id);
+            var categoryExists = await _context.Categories.AnyAsync(x => x.Id == getCategoryByIdVM.Id);
             if (!categoryExists)
             {
-                throw new Exception($"{id} numaralı kadegöri bulunamadı");
+                throw new Exception($"{getCategoryByIdVM.Id} numaralı kadegöri bulunamadı");
             }
             //var categoryEntity = await _context.Categories.FindAsync(id);
             //var categoryDto = new CategoryDto
@@ -62,7 +62,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             //return categoryDto;
             var categoryEntity=await _context.Categories
                 .ProjectTo<CategoryDto>(_mapper.ConfigurationProvider)
-                .FirstOrDefaultAsync(x=> x.Id==id);
+                .FirstOrDefaultAsync(x=> x.Id== getCategoryByIdVM.Id);
             return categoryEntity;
 
         }
@@ -75,14 +75,14 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return categoryEntity.Id;
         }
 
-        public async Task<int> DeleteCategory(int id)
+        public async Task<int> DeleteCategory(DeleteCategoryVM deleteCategoryVM)
         {
-            var categoryExists = await _context.Categories.AnyAsync(x => x.Id == id);
+            var categoryExists = await _context.Categories.AnyAsync(x => x.Id ==deleteCategoryVM.Id);
             if (!categoryExists)
             {
-                throw new Exception($"{id} numaralı kadegöri bulunamadı");
+                throw new Exception($"{deleteCategoryVM.Id} numaralı kadegöri bulunamadı");
             }
-            var existsCategory = await _context.Categories.FindAsync(id);
+            var existsCategory = await _context.Categories.FindAsync(deleteCategoryVM.Id);
             existsCategory.IsDeleted = true;
             _context.Categories.Update(existsCategory);
             await _context.SaveChangesAsync();

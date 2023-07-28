@@ -16,13 +16,13 @@ namespace Ahlatci.Shop.Aplication.Services.Abstraction
 
 
         Task<List<CategoryDto>> GetAllCategories();
-        Task<CategoryDto> GetCategoryById(int id);
+        Task<CategoryDto> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM);
 
         #endregion
         #region Insert, update , Delete
         Task<int> CreateCategory(CreateCategoryVM createCategoryVM );
         Task<int> UpdateCategory(UpdateCategoryVM updateCategoryVM);
-        Task<int> DeleteCategory(int id);
+        Task<int> DeleteCategory(DeleteCategoryVM deleteCategoryVM);
         #endregion
     }
 }
