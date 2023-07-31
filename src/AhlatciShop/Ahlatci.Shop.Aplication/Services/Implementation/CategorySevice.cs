@@ -1,11 +1,14 @@
-﻿using Ahlatci.Shop.Aplication.Models.Dtos;
+﻿using Ahlatci.Shop.Aplication.Exceptions;
+using Ahlatci.Shop.Aplication.Models.Dtos;
 using Ahlatci.Shop.Aplication.Models.RequestModels;
 using Ahlatci.Shop.Aplication.Services.Abstraction;
+using Ahlatci.Shop.Aplication.Validators.Category;
 using Ahlatci.Shop.Aplication.Wrapper;
 using Ahlatci.Shop.Domain.Entities;
 using Ahlatci.Shop.Persistence.Context;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +24,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
 
         private readonly AhlatciContext _context;
         private readonly IMapper _mapper;
+        
         public CategorySevice(AhlatciContext context, IMapper mapper)
         {
             _context = context;
@@ -54,10 +58,17 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
         public async Task<Result<CategoryDto>> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM)
         {
             var result = new Result<CategoryDto>();
+            var validator = new GetCategoryByIdValidator();
+            var valitatorResult=validator.Validate(getCategoryByIdVM);
+            if (!valitatorResult.IsValid)
+            {
+                throw new ValidateException(valitatorResult);
+
+            }
             var categoryExists = await _context.Categories.AnyAsync(x => x.Id == getCategoryByIdVM.Id);
             if (!categoryExists)
             {
-                throw new Exception($"{getCategoryByIdVM.Id} numaralı kadegöri bulunamadı");
+                throw new NotFoundException($"{getCategoryByIdVM.Id} numaralı kadegöri bulunamadı");
             }
             //var categoryEntity = await _context.Categories.FindAsync(id);
             //var categoryDto = new CategoryDto

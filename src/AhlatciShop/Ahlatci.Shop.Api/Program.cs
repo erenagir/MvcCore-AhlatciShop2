@@ -2,7 +2,9 @@ using Ahlatci.Shop.Api.Filters;
 using Ahlatci.Shop.Aplication.AutoMap;
 using Ahlatci.Shop.Aplication.Services.Abstraction;
 using Ahlatci.Shop.Aplication.Services.Implementation;
+using Ahlatci.Shop.Aplication.Validators.Category;
 using Ahlatci.Shop.Persistence.Context;
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -28,6 +30,8 @@ builder.Services.AddScoped<ICategoryService,CategorySevice>();
 //automapper
 builder.Services.AddAutoMapper(typeof(DomainToDtoModel),typeof(ViewModelToDomain));
 
+//Fluendvalidation istekle gönderilen modele ait Proportlerin istenilen formatta olup olmadýðýný kontrol eder
+builder.Services.AddValidatorsFromAssemblyContaining(typeof(CreateCategoryValidator));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
