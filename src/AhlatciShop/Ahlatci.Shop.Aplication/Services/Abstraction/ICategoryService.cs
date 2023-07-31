@@ -1,5 +1,6 @@
 ﻿using Ahlatci.Shop.Aplication.Models.Dtos;
 using Ahlatci.Shop.Aplication.Models.RequestModels;
+using Ahlatci.Shop.Aplication.Wrapper;
 using Ahlatci.Shop.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -15,14 +16,14 @@ namespace Ahlatci.Shop.Aplication.Services.Abstraction
         #region Select
 
 
-        Task<List<CategoryDto>> GetAllCategories();
-        Task<CategoryDto> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM);
+        Task<Result<List<CategoryDto>>> GetAllCategories();
+        Task<Result<CategoryDto>> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM);
 
         #endregion
         #region Insert, update , Delete
-        Task<int> CreateCategory(CreateCategoryVM createCategoryVM );
-        Task<int> UpdateCategory(UpdateCategoryVM updateCategoryVM);
-        Task<int> DeleteCategory(DeleteCategoryVM deleteCategoryVM);
+        Task<Result<int>> CreateCategory(CreateCategoryVM createCategoryVM );
+        Task<Result<int>> UpdateCategory(UpdateCategoryVM updateCategoryVM);
+        Task<Result<int>> DeleteCategory(DeleteCategoryVM deleteCategoryVM);
         #endregion
     }
 }

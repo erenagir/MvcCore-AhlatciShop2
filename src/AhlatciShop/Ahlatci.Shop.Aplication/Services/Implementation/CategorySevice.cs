@@ -1,6 +1,7 @@
 ﻿using Ahlatci.Shop.Aplication.Models.Dtos;
 using Ahlatci.Shop.Aplication.Models.RequestModels;
 using Ahlatci.Shop.Aplication.Services.Abstraction;
+using Ahlatci.Shop.Aplication.Wrapper;
 using Ahlatci.Shop.Domain.Entities;
 using Ahlatci.Shop.Persistence.Context;
 using AutoMapper;
@@ -9,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,8 +26,9 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             _context = context;
             _mapper = mapper;
         }
-        public async Task<List<CategoryDto>> GetAllCategories()
+        public async Task<Result<List<CategoryDto>>> GetAllCategories()
         {
+
             //1.yol
             //var categories = await _context.Categories.Select(x => new CategoryDto
             //{
@@ -39,15 +42,17 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             ////_mapper.Map<T1,T2> t1 türündeki kaynak objeyi t2 türüne cevirir
             //var categoryDtos= _mapper.Map<List<CategoryDto>>(categories);
             //return categoryDtos;
-
+            var result = new Result<List<CategoryDto>>();
             var categoryDtos =await _context.Categories
+                
                 .ProjectTo<CategoryDto>(_mapper.ConfigurationProvider)
                 .ToListAsync();
-            return categoryDtos;
+            result.Data = categoryDtos;
+            return result;
         }
 
-        public async Task<CategoryDto> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM)
-        {
+        public async Task<Result<CategoryDto>> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM)
+        {   var result = new Result<CategoryDto>();
             var categoryExists = await _context.Categories.AnyAsync(x => x.Id == getCategoryByIdVM.Id);
             if (!categoryExists)
             {
@@ -63,20 +68,24 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             var categoryEntity=await _context.Categories
                 .ProjectTo<CategoryDto>(_mapper.ConfigurationProvider)
                 .FirstOrDefaultAsync(x=> x.Id== getCategoryByIdVM.Id);
-            return categoryEntity;
+            result.Data = categoryEntity;
+            return result;
 
         }
-        public async Task<int> CreateCategory(CreateCategoryVM createCategoryVM)
+        public async Task<Result<int>> CreateCategory(CreateCategoryVM createCategoryVM)
         {
+            var result = new Result<int>();
             //var categoryEntity = new Category { Name = createCategoryVM.CategoryName };
             var categoryEntity = _mapper.Map<CreateCategoryVM, Category>(createCategoryVM);
             await _context.Categories.AddAsync(categoryEntity);
             await _context.SaveChangesAsync();
-            return categoryEntity.Id;
+            result.Data = categoryEntity.Id;
+            return result;
         }
 
-        public async Task<int> DeleteCategory(DeleteCategoryVM deleteCategoryVM)
+        public async Task<Result<int>> DeleteCategory(DeleteCategoryVM deleteCategoryVM)
         {
+            var result = new Result<int>();
             var categoryExists = await _context.Categories.AnyAsync(x => x.Id ==deleteCategoryVM.Id);
             if (!categoryExists)
             {
@@ -86,24 +95,27 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             existsCategory.IsDeleted = true;
             _context.Categories.Update(existsCategory);
             await _context.SaveChangesAsync();
-            return existsCategory.Id;
+            result.Data = existsCategory.Id;
+            return result;
         }
-        public async Task<int> UpdateCategory(UpdateCategoryVM updateCategoryVM)
-        {
+        public async Task<Result<int>> UpdateCategory(UpdateCategoryVM updateCategoryVM)
+        {var result = new Result<int>();
             var categoryExists = await _context.Categories.AnyAsync(x => x.Id == updateCategoryVM.Id);
             if (!categoryExists)
             {
                 throw new Exception($"{updateCategoryVM.Id} numaralı kadegöri bulunamadı");
             }
-            var updateCategory=_mapper.Map<UpdateCategoryVM, Category>(updateCategoryVM);
+            
+            var updatedCategory=_mapper.Map<UpdateCategoryVM, Category>(updateCategoryVM);
 
             //var existsCategory = await _context.Categories.FindAsync(updateCategoryVM.Id);
             //existsCategory.Name = updateCategoryVM.CategoryName;
 
             
-            _context.Categories.Update(updateCategory);
+            _context.Categories.Update(updatedCategory);
             await _context.SaveChangesAsync();
-            return updateCategory.Id;
+            result.Data = updatedCategory.Id;
+            return result;
         }
 
 
