@@ -7,6 +7,7 @@ namespace Ahlatci.Shop.Api.Filters
 {
     public class ExceptionHandlerFilter : IExceptionFilter
     {
+         //intercepter (bölücü araya girici )
          
         public void OnException(ExceptionContext context)
         {
@@ -17,7 +18,7 @@ namespace Ahlatci.Shop.Api.Filters
                 Success = false
             };
             context.Result = new JsonResult(result);
-            context.HttpContext.Response.StatusCode = 400;
+            
             context.ExceptionHandled = true;
         }
     }
