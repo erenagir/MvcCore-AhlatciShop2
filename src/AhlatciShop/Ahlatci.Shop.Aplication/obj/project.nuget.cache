@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "nbP4ceiuxHkcDwotdbWhA6AlweK60eN5yWHVeq6DdjaDU7cnQDH2Oq4RxL4+cdTksjCz6riaSpXA5FeCT+Zeew==",
+  "dgSpecHash": "5R+CFcUYmIT4Jnt0MB8DhIdlYQQynfn19/FbH+8eZH6Ifo4m6OMWpppHH/xmP8Af7WhdXdHqvP9MX3n/GwsZVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Aplication\\Ahlatci.Shop.Aplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\agir_\\.nuget\\packages\\aspectcore.abstractions\\2.4.0\\aspectcore.abstractions.2.4.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -41,6 +42,7 @@
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\agir_\\.nuget\\packages\\mradvice\\2.12.2\\mradvice.2.12.2.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.0\\system.diagnostics.diagnosticsource.5.0.0.nupkg.sha512",

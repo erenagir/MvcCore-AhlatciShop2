@@ -8,6 +8,7 @@ using Ahlatci.Shop.Domain.Entities;
 using Ahlatci.Shop.Persistence.Context;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
+
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,6 +17,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Ahlatci.Shop.Aplication.Behaviors;
+
 
 namespace Ahlatci.Shop.Aplication.Services.Implementation
 {
@@ -24,12 +27,13 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
 
         private readonly AhlatciContext _context;
         private readonly IMapper _mapper;
-        
+
         public CategorySevice(AhlatciContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
         }
+
         public async Task<Result<List<CategoryDto>>> GetAllCategories()
         {
 
@@ -55,16 +59,11 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return result;
         }
 
+        [ValidationBehavior(typeof(GetCategoryByIdValidator))]
         public async Task<Result<CategoryDto>> GetCategoryById(GetCategoryByIdVM getCategoryByIdVM)
         {
             var result = new Result<CategoryDto>();
-            var validator = new GetCategoryByIdValidator();
-            var valitatorResult=validator.Validate(getCategoryByIdVM);
-            if (!valitatorResult.IsValid)
-            {
-                throw new ValidateException(valitatorResult);
 
-            }
             var categoryExists = await _context.Categories.AnyAsync(x => x.Id == getCategoryByIdVM.Id);
             if (!categoryExists)
             {
@@ -84,6 +83,8 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return result;
 
         }
+
+        [ValidationBehavior(typeof(CreateCategoryValidator))]
         public async Task<Result<int>> CreateCategory(CreateCategoryVM createCategoryVM)
         {
             var result = new Result<int>();
@@ -95,6 +96,8 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return result;
         }
 
+
+        [ValidationBehavior(typeof(DeleteCategoryValidator))]
         public async Task<Result<int>> DeleteCategory(DeleteCategoryVM deleteCategoryVM)
         {
             var result = new Result<int>();
@@ -110,6 +113,10 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             result.Data = existsCategory.Id;
             return result;
         }
+
+
+
+        [ValidationBehavior(typeof(UpdateCategoryvalidator))]
         public async Task<Result<int>> UpdateCategory(UpdateCategoryVM updateCategoryVM)
         {
             var result = new Result<int>();
@@ -130,6 +137,8 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             result.Data = updatedCategory.Id;
             return result;
         }
+
+
 
 
     }

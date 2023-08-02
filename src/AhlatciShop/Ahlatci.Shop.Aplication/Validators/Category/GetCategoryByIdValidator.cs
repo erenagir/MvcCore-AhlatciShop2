@@ -1,5 +1,6 @@
 ﻿using Ahlatci.Shop.Aplication.Models.RequestModels;
 using FluentValidation;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace Ahlatci.Shop.Aplication.Validators.Category
         {
             RuleFor(x => x.Id).NotEmpty().WithMessage("kategory kimlik numarası boş bırakılamaz.")
                 .GreaterThan(0).WithMessage("kategory kimlik numarası sıfırdan büyük olmalıdır.");
+        }
+
+        internal ValidationResult Validate(IList<object> arguments)
+        {
+            throw new NotImplementedException();
         }
     }
 }

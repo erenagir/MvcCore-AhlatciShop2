@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "5Szo8Wnegs8nSw366xnsttN92TItyMGt9NIDgVbII44OwRq+hX2eIW/1LeEulqSRrWzd0eomU8sGPafnVh7svQ==",
+  "dgSpecHash": "0ETtNmwmcHk9Q0Y6LJbRr7clWAX3oJYriHW1RoV8qvk7dDE5wVACGjcNyTvixWTDJk+aj3rYrsu4DISEMdfcMQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Api\\Ahlatci.Shop.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\agir_\\.nuget\\packages\\aspectcore.abstractions\\2.4.0\\aspectcore.abstractions.2.4.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
@@ -49,6 +50,7 @@
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\agir_\\.nuget\\packages\\mradvice\\2.12.2\\mradvice.2.12.2.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
