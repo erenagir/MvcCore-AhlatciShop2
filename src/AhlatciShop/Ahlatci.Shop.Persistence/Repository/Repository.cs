@@ -1,6 +1,7 @@
 ﻿using Ahlatci.Shop.Domain.Common;
 using Ahlatci.Shop.Domain.Repositories;
 using Ahlatci.Shop.Persistence.Context;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Ahlatci.Shop.Persistence.Repository
@@ -12,17 +13,32 @@ namespace Ahlatci.Shop.Persistence.Repository
         public Repository(AhlatciContext context)
         {
             _context = context;
+        }   public async Task<List<T>> GetAllAsync()
+        {
+          return await _context.Set<T>().ToListAsync();
         }
+
+        public async Task<List<T>> GetByFilterAsync(Expression<Func<T, bool>> filter)
+        {
+           return await _context.Set<T>().Where(filter).ToListAsync();
+        }
+
+        public async Task<T> GetById(object id)
+        {
+            return await _context.Set<T>().FindAsync(id);
+
+        }
+
 
         public async Task add(T entity)
         {
             await    _context.Set<T>().AddAsync(entity);
         }
 
-        public Task delete(object id)
+        public async Task delete(object id)
         {
-          var deleted=_context.Set<T>().Find(id);
-
+            var deleted= await _context.Set<T>().FindAsync(id);
+           await delete(deleted);    
         }
 
         public async Task delete(T entity)
@@ -32,24 +48,16 @@ namespace Ahlatci.Shop.Persistence.Repository
            await Task.CompletedTask;
         }
 
-        public Task<List<T>> GetAllAsync()
+     
+        public async Task update(T entity)
         {
-            throw new NotImplementedException();
+           _context.Set<T>().Update(entity);
+            await Task.CompletedTask;
         }
 
-        public Task<List<T>> GetByFilterAsync(Expression<Func<T, bool>> filter)
+        public async Task<bool> AnyAsync(Expression<Func<T, bool>> filter)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<T> GetById(object id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task update(T entity)
-        {
-            throw new NotImplementedException();
+          return await _context.Set<T>().AnyAsync(filter);
         }
     }
 }

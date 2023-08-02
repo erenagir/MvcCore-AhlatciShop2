@@ -3,7 +3,9 @@ using Ahlatci.Shop.Aplication.AutoMap;
 using Ahlatci.Shop.Aplication.Services.Abstraction;
 using Ahlatci.Shop.Aplication.Services.Implementation;
 using Ahlatci.Shop.Aplication.Validators.Category;
+using Ahlatci.Shop.Domain.Repositories;
 using Ahlatci.Shop.Persistence.Context;
+using Ahlatci.Shop.Persistence.Repository;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -30,7 +32,9 @@ builder.Services.AddControllers(opt=>
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//repository Registiration
 
+builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
 //db context Registirationn
 builder.Services.AddDbContext<AhlatciContext>(opt =>
 {

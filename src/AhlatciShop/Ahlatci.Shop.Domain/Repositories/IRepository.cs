@@ -12,7 +12,7 @@ namespace Ahlatci.Shop.Domain.Repositories
         Task update(T entity);
         Task delete(object id);
         Task delete(T entity);
-
+        Task<bool> AnyAsync(Expression<Func<T,bool>> filter); 
 
     }
 }
