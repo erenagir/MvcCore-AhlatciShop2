@@ -6,9 +6,19 @@ using Ahlatci.Shop.Aplication.Validators.Category;
 using Ahlatci.Shop.Persistence.Context;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+//loging
+var configuration = new ConfigurationBuilder()
+       .SetBasePath(Directory.GetCurrentDirectory())
+       .AddJsonFile("appsettings.json")
+       .Build();
+Log.Logger = new LoggerConfiguration()
+        .ReadFrom.Configuration(configuration)
+        .CreateLogger();
 
+Log.Logger.Information("program start");
 // Add services to the container.
 
 builder.Services.AddControllers(opt=>
@@ -33,6 +43,10 @@ builder.Services.AddAutoMapper(typeof(DomainToDtoModel),typeof(ViewModelToDomain
 
 //Fluendvalidation istekle gönderilen modele ait Proportlerin istenilen formatta olup olmadýðýný kontrol eder
 builder.Services.AddValidatorsFromAssemblyContaining(typeof(CreateCategoryValidator));
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

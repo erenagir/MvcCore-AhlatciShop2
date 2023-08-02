@@ -33,7 +33,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             _context = context;
             _mapper = mapper;
         }
-
+        [PerformanceBehavior]
         public async Task<Result<List<CategoryDto>>> GetAllCategories()
         {
 
