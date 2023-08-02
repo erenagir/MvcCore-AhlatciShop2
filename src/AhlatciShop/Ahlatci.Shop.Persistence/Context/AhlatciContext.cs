@@ -65,6 +65,12 @@ namespace Ahlatci.Shop.Persistence.Context
                         entry.Entity.ModifiedDate = DateTime.Now;
                         entry.Entity.modifiedBy = "admin";
                         break;
+                    case EntityState.Deleted:
+                        entry.Entity.ModifiedDate = DateTime.Now;
+                        entry.Entity.modifiedBy = "admin";
+                        entry.Entity.IsDeleted= true;
+                        entry.State = EntityState.Modified;
+                        break;
                     default:
                         break;
                 }

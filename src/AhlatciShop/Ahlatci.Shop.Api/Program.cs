@@ -25,15 +25,20 @@ builder.Services.AddControllers(opt=>
 {
     opt.Filters.Add(new ExceptionHandlerFilter());
 });
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//db context Registirationn
 builder.Services.AddDbContext<AhlatciContext>(opt =>
 {
     // opt.UseSqlServer(builder.Configuration["ConnectionStrings:AhlatciShop"]); tüm okumalarda yapýlabilir 
     //connection sýnýfýna özel
     opt.UseSqlServer(builder.Configuration.GetConnectionString("AhlatciShop"));
 });
+
 // business service Registiration
 builder.Services.AddScoped<ICategoryService,CategorySevice>();
 
