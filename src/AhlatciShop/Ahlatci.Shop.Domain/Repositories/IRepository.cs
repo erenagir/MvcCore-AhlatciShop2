@@ -5,8 +5,8 @@ namespace Ahlatci.Shop.Domain.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {
-        Task<List<T>> GetAllAsync();
-        Task<List<T>> GetByFilterAsync(Expression<Func<T,bool>> filter);
+        Task<IQueryable<T>> GetAllAsync();
+        Task<IQueryable<T>> GetByFilterAsync(Expression<Func<T,bool>> filter);
         Task<T> GetById(object id);
         Task add(T entity);
         Task update(T entity);

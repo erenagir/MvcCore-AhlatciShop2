@@ -10,6 +10,7 @@ using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using Ahlatci.Shop.Aplication.Behaviors;
 using Ahlatci.Shop.Domain.Repositories;
+using Ahlatci.Shop.Domain.UWork;
 
 namespace Ahlatci.Shop.Aplication.Services.Implementation
 {
@@ -17,20 +18,22 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
     {
 
         private readonly IMapper _mapper;
-        private readonly IRepository<Category> _repository;
+        private readonly IUWork _UnitWork;
 
-        public CategorySevice(IMapper mapper, IRepository<Category> repository)
+
+        public CategorySevice(IMapper mapper, IUWork work)
         {
 
             _mapper = mapper;
-            _repository = repository;
+            _UnitWork = work;
         }
         [PerformanceBehavior]
         public async Task<Result<List<CategoryDto>>> GetAllCategories()
         {
             var result = new Result<List<CategoryDto>>();
-            var categoryEntites = await _repository.GetAllAsync();
-            var categoryDtos = _mapper.Map<List<CategoryDto>>(categoryEntites);
+            var categoryEntites = await _UnitWork.GetRepository<Category>().GetAllAsync();
+            var categoryDtos =await categoryEntites.ProjectTo<CategoryDto>(_mapper.ConfigurationProvider).ToListAsync();
+            //var categoryDtos = _mapper.Map<List<CategoryDto>>(categoryEntites);
             result.Data = categoryDtos;
             return result;
         }
@@ -40,13 +43,13 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
         {
             var result = new Result<CategoryDto>();
 
-            var categoryExists = await _repository.AnyAsync(x => x.Id == getCategoryByIdVM.Id);
+            var categoryExists = await _UnitWork.GetRepository<Category>().AnyAsync(x => x.Id == getCategoryByIdVM.Id);
             if (!categoryExists)
             {
                 throw new NotFoundException($"{getCategoryByIdVM.Id} numaralı kadegöri bulunamadı");
             }
             
-            var categoryEntity=await _repository.GetById(getCategoryByIdVM.Id);
+            var categoryEntity=await _UnitWork.GetRepository<Category>().GetById(getCategoryByIdVM.Id);
             var categoryDto=  _mapper.Map<CategoryDto>(categoryEntity);
             //var categoryEntity = await _context.Categories
             //    .ProjectTo<CategoryDto>(_mapper.ConfigurationProvider)
@@ -62,9 +65,9 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             var result = new Result<int>();
             
             var categoryEntity = _mapper.Map<CreateCategoryVM, Category>(createCategoryVM);
-            await _repository.add(categoryEntity);
+            await _UnitWork.GetRepository<Category>().add(categoryEntity);
 
-           
+           await _UnitWork.ComitAsync();
             result.Data = categoryEntity.Id;
             return result;
         }
@@ -74,15 +77,15 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
         public async Task<Result<int>> DeleteCategory(DeleteCategoryVM deleteCategoryVM)
         {
             var result = new Result<int>();
-            var categoryExists = await _repository.AnyAsync(x => x.Id == deleteCategoryVM.Id);
+            var categoryExists = await _UnitWork.GetRepository<Category>().AnyAsync(x => x.Id == deleteCategoryVM.Id);
             if (!categoryExists)
             {
                 throw new Exception($"{deleteCategoryVM.Id} numaralı kadegöri bulunamadı");
             }
-            await _repository.delete(deleteCategoryVM.Id);
-           // var existsCategory = await _repository.GetById(deleteCategoryVM.Id);
-            await _repository.delete(deleteCategoryVM.Id);
-            
+            await _UnitWork.GetRepository<Category>().delete(deleteCategoryVM.Id);
+            // var existsCategory = await _repository.GetById(deleteCategoryVM.Id);
+            await _UnitWork.ComitAsync();
+
             result.Data = deleteCategoryVM.Id;
             return result;
         }
@@ -93,7 +96,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
         public async Task<Result<int>> UpdateCategory(UpdateCategoryVM updateCategoryVM)
         {
             var result = new Result<int>();
-            var categoryExists = await _repository.AnyAsync(x => x.Id == updateCategoryVM.Id);
+            var categoryExists = await _UnitWork.GetRepository<Category>().AnyAsync(x => x.Id == updateCategoryVM.Id);
             if (!categoryExists)
             {
                 throw new Exception($"{updateCategoryVM.Id} numaralı kadegöri bulunamadı");
@@ -105,8 +108,8 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             //existsCategory.Name = updateCategoryVM.CategoryName;
 
 
-            await _repository.update(updatedCategory);
-            
+            await _UnitWork.GetRepository<Category>().update(updatedCategory);
+            await _UnitWork.ComitAsync();
             result.Data = updatedCategory.Id;
             return result;
         }

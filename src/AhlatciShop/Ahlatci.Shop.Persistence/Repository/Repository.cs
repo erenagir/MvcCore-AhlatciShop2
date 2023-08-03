@@ -13,14 +13,14 @@ namespace Ahlatci.Shop.Persistence.Repository
         public Repository(AhlatciContext context)
         {
             _context = context;
-        }   public async Task<List<T>> GetAllAsync()
+        }   public async Task<IQueryable<T>> GetAllAsync()
         {
-          return await _context.Set<T>().ToListAsync();
+          return await Task.FromResult( _context.Set<T>());
         }
 
-        public async Task<List<T>> GetByFilterAsync(Expression<Func<T, bool>> filter)
+        public async Task<IQueryable<T>> GetByFilterAsync(Expression<Func<T, bool>> filter)
         {
-           return await _context.Set<T>().Where(filter).ToListAsync();
+           return await Task.FromResult(_context.Set<T>().Where(filter));
         }
 
         public async Task<T> GetById(object id)
