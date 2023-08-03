@@ -1,6 +1,4 @@
 ﻿using Ahlatci.Shop.Aplication.Exceptions;
-using Ahlatci.Shop.Aplication.Models.Dtos;
-using Ahlatci.Shop.Aplication.Models.RequestModels;
 using Ahlatci.Shop.Aplication.Services.Abstraction;
 using Ahlatci.Shop.Aplication.Validators.Category;
 using Ahlatci.Shop.Aplication.Wrapper;
@@ -11,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Ahlatci.Shop.Aplication.Behaviors;
 using Ahlatci.Shop.Domain.Repositories;
 using Ahlatci.Shop.Domain.UWork;
+using Ahlatci.Shop.Aplication.Models.Dtos.Category;
+using Ahlatci.Shop.Aplication.Models.RequestModels.Categories;
 
 namespace Ahlatci.Shop.Aplication.Services.Implementation
 {

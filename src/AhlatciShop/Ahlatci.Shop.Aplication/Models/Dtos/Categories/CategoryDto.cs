@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahlatci.Shop.Aplication.Models.Dtos
+namespace Ahlatci.Shop.Aplication.Models.Dtos.Category
 {
     public class CategoryDto
     {

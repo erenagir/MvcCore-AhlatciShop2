@@ -1,4 +1,4 @@
-﻿using Ahlatci.Shop.Aplication.Models.RequestModels;
+﻿using Ahlatci.Shop.Aplication.Models.RequestModels.Categories;
 using FluentValidation;
 using System;
 using System.Collections.Generic;

@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Ahlatci.Shop.Persistence\Ahlatci.Shop.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Dtos\Account\" />
+  </ItemGroup>
+
 </Project>

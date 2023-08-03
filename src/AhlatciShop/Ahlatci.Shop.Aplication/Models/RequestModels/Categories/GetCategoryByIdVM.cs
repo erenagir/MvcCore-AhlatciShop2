@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahlatci.Shop.Aplication.Models.RequestModels
+namespace Ahlatci.Shop.Aplication.Models.RequestModels.Categories
 {
-    public class UpdateCategoryVM
+    public class GetCategoryByIdVM
     {
         public int Id { get; set; }
-        public string CategoryName { get; set; }
     }
 }

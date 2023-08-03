@@ -1,4 +1,4 @@
-﻿using Ahlatci.Shop.Aplication.Models.Dtos;
+﻿using Ahlatci.Shop.Aplication.Models.Dtos.Category;
 using Ahlatci.Shop.Domain.Entities;
 using AutoMapper;
 using System;

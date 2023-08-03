@@ -15,9 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahlatci.Shop.Domain", "Ahla
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahlatci.Shop.Infrastructure", "Ahlatci.Shop.Infrastructure\Ahlatci.Shop.Infrastructure.csproj", "{60ABD55C-D92D-4BAD-BBE9-3B0177E3EFA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahlatci.Shop.Persistence", "Ahlatci.Shop.Persistence\Ahlatci.Shop.Persistence.csproj", "{26C7B778-B1B2-4612-BE36-D69DDC4B3FD9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahlatci.Shop.Persistence", "Ahlatci.Shop.Persistence\Ahlatci.Shop.Persistence.csproj", "{26C7B778-B1B2-4612-BE36-D69DDC4B3FD9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahlatci.Shop.Api", "Ahlatci.Shop.Api\Ahlatci.Shop.Api.csproj", "{6B5F56E3-6A22-4620-825F-BC73F7C61FC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ahlatci.Shop.Api", "Ahlatci.Shop.Api\Ahlatci.Shop.Api.csproj", "{6B5F56E3-6A22-4620-825F-BC73F7C61FC3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ahlatci.Shop.Utils", "Ahlatci.Shop.Utils\Ahlatci.Shop.Utils.csproj", "{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{6B5F56E3-6A22-4620-825F-BC73F7C61FC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5F56E3-6A22-4620-825F-BC73F7C61FC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B5F56E3-6A22-4620-825F-BC73F7C61FC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{60ABD55C-D92D-4BAD-BBE9-3B0177E3EFA7} = {15E80C44-665D-4AC9-AD4D-6A2DE1E23D30}
 		{26C7B778-B1B2-4612-BE36-D69DDC4B3FD9} = {15E80C44-665D-4AC9-AD4D-6A2DE1E23D30}
 		{6B5F56E3-6A22-4620-825F-BC73F7C61FC3} = {C53BCEC2-56BB-4E39-83C4-BEDC86C0C34E}
+		{DE62ED17-2B5F-47D5-A8C9-9C01E0E8F2FB} = {15E80C44-665D-4AC9-AD4D-6A2DE1E23D30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {014A90C3-F429-4E3B-BC24-96308CFEDD60}
