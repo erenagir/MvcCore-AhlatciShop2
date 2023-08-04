@@ -1,5 +1,6 @@
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Domain\bin\Debug\net7.0\Ahlatci.Shop.Domain.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Persistence\bin\Debug\net7.0\Ahlatci.Shop.Persistence.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\bin\Debug\Ahlatci.Shop.Utils.dll
 C:\Users\agir_\.nuget\packages\aspectcore.abstractions\2.4.0\lib\net7.0\AspectCore.Abstractions.dll
 C:\Users\agir_\.nuget\packages\automapper\12.0.1\lib\netstandard2.1\AutoMapper.dll
 C:\Users\agir_\.nuget\packages\automapper.extensions.microsoft.dependencyinjection\12.0.1\lib\netstandard2.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

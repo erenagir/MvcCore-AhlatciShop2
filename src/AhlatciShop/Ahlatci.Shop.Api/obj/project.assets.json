@@ -1577,6 +1577,7 @@
         "dependencies": {
           "Ahlatci.Shop.Domain": "1.0.0",
           "Ahlatci.Shop.Persistence": "1.0.0",
+          "Ahlatci.Shop.Utils": "1.0.0",
           "AspectCore.Abstractions": "2.4.0",
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
@@ -1616,6 +1617,15 @@
         },
         "runtime": {
           "bin/placeholder/Ahlatci.Shop.Persistence.dll": {}
+        }
+      },
+      "Ahlatci.Shop.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ahlatci.Shop.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ahlatci.Shop.Utils.dll": {}
         }
       }
     }
@@ -4936,6 +4946,11 @@
       "type": "project",
       "path": "../Ahlatci.Shop.Persistence/Ahlatci.Shop.Persistence.csproj",
       "msbuildProject": "../Ahlatci.Shop.Persistence/Ahlatci.Shop.Persistence.csproj"
+    },
+    "Ahlatci.Shop.Utils/1.0.0": {
+      "type": "project",
+      "path": "../Ahlatci.Shop.Utils/Ahlatci.Shop.Utils.csproj",
+      "msbuildProject": "../Ahlatci.Shop.Utils/Ahlatci.Shop.Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {

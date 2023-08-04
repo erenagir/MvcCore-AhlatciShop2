@@ -10,6 +10,7 @@
         "dependencies": {
           "Ahlatci.Shop.Domain": "1.0.0",
           "Ahlatci.Shop.Persistence": "1.0.0",
+          "Ahlatci.Shop.Utils": "1.0.0",
           "AspectCore.Abstractions": "2.4.0",
           "AutoMapper": "12.0.1",
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
@@ -696,6 +697,11 @@
         "runtime": {
           "Ahlatci.Shop.Persistence.dll": {}
         }
+      },
+      "Ahlatci.Shop.Utils/1.0.0": {
+        "runtime": {
+          "Ahlatci.Shop.Utils.dll": {}
+        }
       }
     }
   },
@@ -1187,6 +1193,11 @@
       "sha512": ""
     },
     "Ahlatci.Shop.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Ahlatci.Shop.Utils/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

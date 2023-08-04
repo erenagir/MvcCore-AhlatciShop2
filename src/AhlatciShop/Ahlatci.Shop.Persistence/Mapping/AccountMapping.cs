@@ -30,6 +30,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
                  .HasColumnOrder(4);
             builder.Property(x => x.LastUserIp)
                  .HasColumnName("LAST_USER_IP")
+                 .IsRequired(false)
                  .HasColumnOrder(6);
 
             builder.HasOne(x => x.Customer)

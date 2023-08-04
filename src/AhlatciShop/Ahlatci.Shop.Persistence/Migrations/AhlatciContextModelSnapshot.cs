@@ -48,7 +48,6 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("LastUserIp")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("LAST_USER_IP")
                         .HasColumnOrder(6);
@@ -115,7 +114,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -132,7 +131,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(30)
                         .HasDefaultValueSql("0");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -191,7 +190,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -236,7 +235,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnName("LIKE_COUNT")
                         .HasColumnOrder(5);
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -285,7 +284,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnName("CITY_ID")
                         .HasColumnOrder(3);
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -319,7 +318,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(30)
                         .HasDefaultValueSql("0");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -372,7 +371,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnName("ADDRESS_ID")
                         .HasColumnOrder(3);
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -394,7 +393,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(30)
                         .HasDefaultValueSql("0");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -435,7 +434,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -452,7 +451,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(30)
                         .HasDefaultValueSql("0");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -506,7 +505,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnName("CATEGORY_ID")
                         .HasColumnOrder(2);
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -529,7 +528,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(30)
                         .HasDefaultValueSql("0");
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);
@@ -572,7 +571,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime?>("CreateDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("CREATED_DATE")
                         .HasColumnOrder(26);
@@ -594,7 +593,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnName("IS_THUMBNAIL")
                         .HasColumnOrder(6);
 
-                    b.Property<DateTime>("ModifiedDate")
+                    b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("MODİFİED_DATE")
                         .HasColumnOrder(29);

@@ -2,6 +2,7 @@
 using Ahlatci.Shop.Domain.Repositories;
 using Ahlatci.Shop.Domain.UWork;
 using Ahlatci.Shop.Persistence.Context;
+using Ahlatci.Shop.Persistence.Repository;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace Ahlatci.Shop.Persistence.UWork
 
         public async Task<bool> ComitAsync()
         {
+            var result = false;
             using (var transaction = await _context.Database.BeginTransactionAsync())
             {
 
@@ -35,16 +37,18 @@ namespace Ahlatci.Shop.Persistence.UWork
                 try
                 {
                     await _context.SaveChangesAsync();
-                    return true;
+                   await transaction.CommitAsync();
+                    result= true;
                 }
                 catch
                 {
                     await transaction.RollbackAsync();
-
+                
                     throw;
                 }
-                return false;
+                
             }
+            return result;
         }
 
         public IRepository<T> GetRepository<T>() where T : BaseEntity
@@ -53,9 +57,10 @@ namespace Ahlatci.Shop.Persistence.UWork
             {
                 return (IRepository<T>)_repository[typeof(IRepository<T>)];
             }
-            var scope = _serviceProvider.CreateScope();
+            var repository = new Repository<T>(_context);
+            _repository.Add(typeof(Repository<T>), repository);
 
-            var repository = scope.ServiceProvider.GetRequiredService<IRepository<T>>();
+           
             return repository;
 
         }

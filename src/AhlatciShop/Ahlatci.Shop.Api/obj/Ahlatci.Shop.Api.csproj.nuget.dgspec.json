@@ -143,6 +143,9 @@
               },
               "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj": {
                 "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj"
+              },
+              "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj": {
+                "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj"
               }
             }
           }
@@ -346,6 +349,21 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         }
+      }
+    },
+    "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj",
+        "projectName": "Ahlatci.Shop.Utils",
+        "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
       }
     }
   }

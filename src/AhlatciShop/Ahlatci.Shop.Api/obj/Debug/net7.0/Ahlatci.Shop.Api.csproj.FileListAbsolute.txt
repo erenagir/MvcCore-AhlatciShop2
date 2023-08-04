@@ -1,4 +1,3 @@
-C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\appsettings.json
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Ahlatci.Shop.Api.exe
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Ahlatci.Shop.Api.deps.json
@@ -97,3 +96,5 @@ C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciSho
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Serilog.Sinks.File.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Serilog.Sinks.PeriodicBatching.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Serilog.Sinks.Seq.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Ahlatci.Shop.Utils.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Api\bin\Debug\net7.0\Ahlatci.Shop.Utils.pdb

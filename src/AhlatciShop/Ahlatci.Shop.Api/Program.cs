@@ -50,7 +50,7 @@ builder.Services.AddDbContext<AhlatciContext>(opt =>
 
 // business service Registiration
 builder.Services.AddScoped<ICategoryService,CategorySevice>();
-
+builder.Services.AddScoped<IAccountService,AccountService>();
 
 //automapper
 builder.Services.AddAutoMapper(typeof(DomainToDtoModel),typeof(ViewModelToDomain));

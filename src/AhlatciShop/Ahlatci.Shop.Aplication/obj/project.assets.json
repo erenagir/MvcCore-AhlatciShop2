@@ -1150,6 +1150,15 @@
         "runtime": {
           "bin/placeholder/Ahlatci.Shop.Persistence.dll": {}
         }
+      },
+      "Ahlatci.Shop.Utils/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Ahlatci.Shop.Utils.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ahlatci.Shop.Utils.dll": {}
+        }
       }
     }
   },
@@ -3580,12 +3589,18 @@
       "type": "project",
       "path": "../Ahlatci.Shop.Persistence/Ahlatci.Shop.Persistence.csproj",
       "msbuildProject": "../Ahlatci.Shop.Persistence/Ahlatci.Shop.Persistence.csproj"
+    },
+    "Ahlatci.Shop.Utils/1.0.0": {
+      "type": "project",
+      "path": "../Ahlatci.Shop.Utils/Ahlatci.Shop.Utils.csproj",
+      "msbuildProject": "../Ahlatci.Shop.Utils/Ahlatci.Shop.Utils.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Ahlatci.Shop.Domain >= 1.0.0",
       "Ahlatci.Shop.Persistence >= 1.0.0",
+      "Ahlatci.Shop.Utils >= 1.0.0",
       "AspectCore.Abstractions >= 2.4.0",
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
@@ -3632,6 +3647,9 @@
             },
             "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj": {
               "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Persistence\\Ahlatci.Shop.Persistence.csproj"
+            },
+            "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj": {
+              "projectPath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Utils\\Ahlatci.Shop.Utils.csproj"
             }
           }
         }

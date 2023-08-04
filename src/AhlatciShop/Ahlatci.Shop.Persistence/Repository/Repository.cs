@@ -38,7 +38,8 @@ namespace Ahlatci.Shop.Persistence.Repository
         public async Task delete(object id)
         {
             var deleted= await _context.Set<T>().FindAsync(id);
-           await delete(deleted);    
+            _context.Set<T>().Remove(deleted);
+            await Task.CompletedTask;
         }
 
         public async Task delete(T entity)

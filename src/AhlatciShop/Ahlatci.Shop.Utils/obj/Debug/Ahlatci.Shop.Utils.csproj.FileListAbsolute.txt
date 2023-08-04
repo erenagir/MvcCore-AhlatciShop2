@@ -1,0 +1,6 @@
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\bin\Debug\Ahlatci.Shop.Utils.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\bin\Debug\Ahlatci.Shop.Utils.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\obj\Debug\Ahlatci.Shop.Utils.csproj.AssemblyReference.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\obj\Debug\Ahlatci.Shop.Utils.csproj.CoreCompileInputs.cache
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\obj\Debug\Ahlatci.Shop.Utils.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Utils\obj\Debug\Ahlatci.Shop.Utils.pdb
