@@ -22,10 +22,10 @@ namespace Ahlatci.Shop.Api.Controllers
         
         [HttpPost("create")]
 
-        public async Task<ActionResult< Result<int>>> CreateCategory(CreateUserVM createUserVM)
+        public async Task< Result<bool>> CreateAccount(CreateUserVM createUserVM)
         {
-            var entity = await _accountService.CreateUser(createUserVM);
-            return Ok(entity);
+            var entity = await _accountService.Reister(createUserVM);
+            return entity;
         }
        
     }

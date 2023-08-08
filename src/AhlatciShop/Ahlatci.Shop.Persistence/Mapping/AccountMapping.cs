@@ -41,7 +41,8 @@ namespace Ahlatci.Shop.Persistence.Mapping
                 .HasColumnOrder(7);
 
             builder.HasOne(x => x.Customer)
-                .WithOne(x => x.Account);
+                .WithOne(x => x.Account)
+                .HasForeignKey<Account>(x => x.CustomerId);
             builder.ToTable("ACCOUNTS");
         }
     }

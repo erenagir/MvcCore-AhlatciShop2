@@ -73,6 +73,9 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CustomerId")
+                        .IsUnique();
+
                     b.ToTable("ACCOUNTS", (string)null);
                 });
 
@@ -276,11 +279,6 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AccountId")
-                        .HasColumnType("int")
-                        .HasColumnName("ACCOUNT_ID")
-                        .HasColumnOrder(2);
-
                     b.Property<DateTime>("Birthdate")
                         .HasColumnType("datetime2")
                         .HasColumnName("BIRTHDATE")
@@ -354,9 +352,6 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnOrder(28);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AccountId")
-                        .IsUnique();
 
                     b.HasIndex("CityId");
 
@@ -633,6 +628,18 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     b.ToTable("PRODUCT_IMAGES", (string)null);
                 });
 
+            modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Account", b =>
+                {
+                    b.HasOne("Ahlatci.Shop.Domain.Entities.Customer", "Customer")
+                        .WithOne("Account")
+                        .HasForeignKey("Ahlatci.Shop.Domain.Entities.Account", "CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("CUSTOMER_ACCOUNT_ACCOUNT_ID");
+
+                    b.Navigation("Customer");
+                });
+
             modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Address", b =>
                 {
                     b.HasOne("Ahlatci.Shop.Domain.Entities.City", "City")
@@ -667,21 +674,12 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
             modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Customer", b =>
                 {
-                    b.HasOne("Ahlatci.Shop.Domain.Entities.Account", "Account")
-                        .WithOne("Customer")
-                        .HasForeignKey("Ahlatci.Shop.Domain.Entities.Customer", "AccountId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("CUSTOMER_ACCOUNT_ACCOUNT_ID");
-
                     b.HasOne("Ahlatci.Shop.Domain.Entities.City", "City")
                         .WithMany("Customers")
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
                         .HasConstraintName("CUSTOMER_CITY_CITY_ID");
-
-                    b.Navigation("Account");
 
                     b.Navigation("City");
                 });
@@ -752,12 +750,6 @@ namespace Ahlatci.Shop.Persistence.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Account", b =>
-                {
-                    b.Navigation("Customer")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Address", b =>
                 {
                     b.Navigation("Orders");
@@ -777,6 +769,9 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
             modelBuilder.Entity("Ahlatci.Shop.Domain.Entities.Customer", b =>
                 {
+                    b.Navigation("Account")
+                        .IsRequired();
+
                     b.Navigation("Comments");
 
                     b.Navigation("Orders");

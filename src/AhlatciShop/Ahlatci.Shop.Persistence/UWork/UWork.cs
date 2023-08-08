@@ -14,7 +14,7 @@ namespace Ahlatci.Shop.Persistence.UWork
 {
     public class UWork : IUWork
     {
-        private Dictionary<Type, object> _repository;
+        private Dictionary<Type, object> _repositories;
        
         private readonly AhlatciContext _context;
 
@@ -22,7 +22,7 @@ namespace Ahlatci.Shop.Persistence.UWork
 
         public UWork(IServiceProvider serviceProvider, AhlatciContext context)
         {
-            _repository = new Dictionary<Type, object>();
+            _repositories = new Dictionary<Type, object>();
            
             _context = context;
         }
@@ -30,7 +30,7 @@ namespace Ahlatci.Shop.Persistence.UWork
         public async Task<bool> ComitAsync()
         {
             var result = false;
-            using (var transaction = await _context.Database.BeginTransactionAsync())
+            using (var transaction = _context.Database.BeginTransaction()) 
             {
 
 
@@ -53,16 +53,47 @@ namespace Ahlatci.Shop.Persistence.UWork
 
         public IRepository<T> GetRepository<T>() where T : BaseEntity
         {
-            if (_repository.ContainsKey(typeof(IRepository<T>)))
+            //Daha önce bu repoyu talep eden bir kullanıcı olmuşsa aynı repoyu tekrar üretmez.
+            //Burada sakladığı koleksiyon içerisinden gönderir. Bu da performansı artırır.
+            if (_repositories.ContainsKey(typeof(IRepository<T>)))
             {
-                return (IRepository<T>)_repository[typeof(IRepository<T>)];
+                return (IRepository<T>)_repositories[typeof(IRepository<T>)];
             }
+
             var repository = new Repository<T>(_context);
-            _repository.Add(typeof(Repository<T>), repository);
-
-           
+            _repositories.Add(typeof(IRepository<T>), repository);
             return repository;
-
         }
+
+        #region Dispose
+
+        bool _disposed = false;
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (_disposed)
+            {
+                return;
+            }
+
+            if (disposing)
+            {
+                //.Net objelerini kaldır.
+                _context.Dispose();
+            }
+
+            //Kullanılan harici dil kütüphaneleri (.Net ile yazılmamış external kütüphaneler)
+            //Örneğin görüntü işlemi için kullanılacak bir C++ kütüphanesini bellekten at
+
+            _disposed = true;
+        }
+
+        #endregion
     }
 }
