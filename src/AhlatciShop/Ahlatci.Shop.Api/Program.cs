@@ -9,8 +9,11 @@ using Ahlatci.Shop.Persistence.Context;
 using Ahlatci.Shop.Persistence.Repository;
 using Ahlatci.Shop.Persistence.UWork;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 //loging
@@ -25,7 +28,7 @@ Log.Logger = new LoggerConfiguration()
 Log.Logger.Information("program start");
 // Add services to the container.
 
-builder.Services.AddControllers(opt=>
+builder.Services.AddControllers(opt =>
 {
     opt.Filters.Add(new ExceptionHandlerFilter());
 });
@@ -39,7 +42,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IUWork, UWork>();
 //repository Registiration
 
-builder.Services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 //db context Registirationn
 builder.Services.AddDbContext<AhlatciContext>(opt =>
 {
@@ -49,15 +52,31 @@ builder.Services.AddDbContext<AhlatciContext>(opt =>
 });
 
 // business service Registiration
-builder.Services.AddScoped<ICategoryService,CategorySevice>();
-builder.Services.AddScoped<IAccountService,AccountService>();
+builder.Services.AddScoped<ICategoryService, CategorySevice>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 //automapper
-builder.Services.AddAutoMapper(typeof(DomainToDtoModel),typeof(ViewModelToDomain));
+builder.Services.AddAutoMapper(typeof(DomainToDtoModel), typeof(ViewModelToDomain));
 
 //Fluendvalidation istekle gönderilen modele ait Proportlerin istenilen formatta olup olmadýðýný kontrol eder
 builder.Services.AddValidatorsFromAssemblyContaining(typeof(CreateCategoryValidator));
 
+
+// jwt kimlik doðrulama servisi ekleme
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+       .AddJwtBearer(options =>
+       {
+           options.TokenValidationParameters = new TokenValidationParameters
+           {
+               ValidateIssuer = true,
+               ValidateAudience = true,
+               ValidateLifetime = true,
+               ValidateIssuerSigningKey = true,
+               ValidIssuer = builder.Configuration["Jwt:Issuer"],
+               ValidAudience = builder.Configuration["Jwt:Audiance"],
+               IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SigningKey"]))
+           };
+       });
 
 
 
@@ -71,6 +90,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

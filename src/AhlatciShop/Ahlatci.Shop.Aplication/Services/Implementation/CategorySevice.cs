@@ -7,7 +7,6 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using Ahlatci.Shop.Aplication.Behaviors;
-using Ahlatci.Shop.Domain.Repositories;
 using Ahlatci.Shop.Domain.UWork;
 using Ahlatci.Shop.Aplication.Models.Dtos.Category;
 using Ahlatci.Shop.Aplication.Models.RequestModels.Categories;
@@ -65,9 +64,9 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             var result = new Result<int>();
             
             var categoryEntity = _mapper.Map<CreateCategoryVM, Category>(createCategoryVM);
-            await _UnitWork.GetRepository<Category>().add(categoryEntity);
+             _UnitWork.GetRepository<Category>().Add(categoryEntity);
 
-           await _UnitWork.ComitAsync();
+            await _UnitWork.ComitAsync();
             result.Data = categoryEntity.Id;
             return result;
         }
@@ -82,7 +81,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             {
                 throw new Exception($"{deleteCategoryVM.Id} numaralı kadegöri bulunamadı");
             }
-            await _UnitWork.GetRepository<Category>().delete(deleteCategoryVM.Id);
+             _UnitWork.GetRepository<Category>().Delete(deleteCategoryVM.Id);
             // var existsCategory = await _repository.GetById(deleteCategoryVM.Id);
             await _UnitWork.ComitAsync();
 
@@ -96,21 +95,24 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
         public async Task<Result<int>> UpdateCategory(UpdateCategoryVM updateCategoryVM)
         {
             var result = new Result<int>();
-            var categoryExists = await _UnitWork.GetRepository<Category>().AnyAsync(x => x.Id == updateCategoryVM.Id);
-            if (!categoryExists)
+            var categoryExists = await _UnitWork.GetRepository<Category>().GetById(updateCategoryVM);
+            if (categoryExists is null)
             {
                 throw new Exception($"{updateCategoryVM.Id} numaralı kadegöri bulunamadı");
             }
 
-            var updatedCategory = _mapper.Map<UpdateCategoryVM, Category>(updateCategoryVM);
+           var updatedCategory= _mapper.Map(updateCategoryVM,categoryExists);
 
             //var existsCategory = await _context.Categories.FindAsync(updateCategoryVM.Id);
             //existsCategory.Name = updateCategoryVM.CategoryName;
 
 
-            await _UnitWork.GetRepository<Category>().update(updatedCategory);
+             _UnitWork.GetRepository<Category>().Update(updatedCategory);
             await _UnitWork.ComitAsync();
+            
             result.Data = updatedCategory.Id;
+            
+           
             return result;
         }
 

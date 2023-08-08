@@ -64,7 +64,6 @@ namespace Ahlatci.Shop.Persistence.UWork
             _repositories.Add(typeof(IRepository<T>), repository);
             return repository;
         }
-
         #region Dispose
 
         bool _disposed = false;
@@ -95,5 +94,7 @@ namespace Ahlatci.Shop.Persistence.UWork
         }
 
         #endregion
+
+
     }
 }

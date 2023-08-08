@@ -12,9 +12,12 @@ using Ahlatci.Shop.Utils;
 using AutoMapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,13 +35,33 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             _uWork = db;
             _configuration = configuration;
         }
-        
 
-       
 
-        public Task<Result<TokenDto>> Login(LoginVM loginVM)
+
+        [ValidationBehavior(typeof(LoginValidator))]
+        public async Task<Result<TokenDto>> Login(LoginVM loginVM)
         {
-            throw new NotImplementedException();
+            var result = new Result<TokenDto>();
+            var hashedPassword = CipherUtils.EncryptString(_configuration["AppSettings:SecretKey"], loginVM.Password);
+
+            var existsUser = await _uWork.GetRepository<Account>().GetSingleByFilterAsync(x => x.Username.Trim().ToUpper() == loginVM.Username.Trim().ToUpper()
+            && x.Password == hashedPassword);
+            if (existsUser is null)
+            {
+                throw new NotFoundException($"{loginVM.Username} kullanıcı adı bulunamadı yada şifre yanlış");
+            }
+            var expireMinute = Convert.ToInt32(_configuration["Jwt:Expire"]);
+
+            var expireDate = DateTime.Now.AddMinutes(expireMinute);
+
+            // token üret ve return et
+            var tokenString = GenerateJwtToken(existsUser, expireDate);
+            result.Data = new TokenDto
+            {
+                Token=tokenString,
+                Expiredate=expireDate,
+            };
+            return result;
         }
 
         [ValidationBehavior(typeof(CreateUserValidator))]
@@ -70,25 +93,44 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
 
             accountEntity.Customer = customerEntity;
 
-            _uWork.GetRepository<Customer>().add(customerEntity);
-            _uWork.GetRepository<Account>().add(accountEntity);
+            _uWork.GetRepository<Customer>().Add(customerEntity);
+            _uWork.GetRepository<Account>().Add(accountEntity);
             result.Data = await _uWork.ComitAsync();
 
             return result;
         }
-        
-        //public async Task<Result<TokenDto>> Login(LoginVM loginVM)
-        //{
+
+       
 
 
-        //   //var existsUsers= await _db.GetRepository<Account>()
-        //   //     .GetByFilterAsync(x=>x.Username.Trim().ToUpper()==loginVM.Username.Trim().ToUpper()
-        //   //    && loginVM.Password == CipherUtils.DecryptString(_configuration["AppSettings:SecretKey"],x.Password));
+        private string GenerateJwtToken(Account account, DateTime expireDate)
+        {
+            var secretkey = _configuration["Jwt:SigningKey"];
+            var ıssuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
 
-        //   // if(!existsUsers.Any())
-        //   // {
 
-        //   // }
-        //}
+
+
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(secretkey); // appsettings.json içinde JWT ayarlarınızı yapmalısınız
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Audience = audience,
+                Issuer = ıssuer,
+
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(ClaimTypes.Name,account.Username),
+                    new Claim(ClaimTypes.Role,((int)account.Role).ToString())
+                }),
+                Expires = DateTime.UtcNow.AddHours(1),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
+        }
     }
 }

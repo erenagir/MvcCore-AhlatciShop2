@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "kWCTzTdpAIN28Ue09JnoeoP3KtPfNQa5TvvNtjEJABosVbHOmhNb66GJnTovOZZgcB0OS3oA+vxiEtkOH8e7mg==",
+  "dgSpecHash": "bCdXv2j7sLQwcjcvxtoG1BabEEQ8voJhrBet9dz14alhPLLs6zJtIsftVfizrV9FBr4qqZXQsvmjgcwr283MIQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Api\\Ahlatci.Shop.Api.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\agir_\\.nuget\\packages\\fluentvalidation\\11.6.0\\fluentvalidation.11.6.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.6.0\\fluentvalidation.dependencyinjectionextensions.11.6.0.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\agir_\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.10\\microsoft.aspnetcore.authentication.jwtbearer.7.0.10.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.7\\microsoft.aspnetcore.openapi.7.0.7.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\agir_\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
