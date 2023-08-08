@@ -45,7 +45,9 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasDefaultValueSql("0");
 
                     b.Property<DateTime?>("LastLoginDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("LAST_LOGİN_DATE")
+                        .HasColumnOrder(5);
 
                     b.Property<string>("LastUserIp")
                         .HasColumnType("nvarchar(max)")
@@ -57,6 +59,11 @@ namespace Ahlatci.Shop.Persistence.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("PASSWORD")
                         .HasColumnOrder(4);
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int")
+                        .HasColumnName("ROlE_ID")
+                        .HasColumnOrder(7);
 
                     b.Property<string>("Username")
                         .IsRequired()

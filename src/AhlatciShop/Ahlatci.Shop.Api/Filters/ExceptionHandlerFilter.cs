@@ -20,6 +20,10 @@ namespace Ahlatci.Shop.Api.Filters
             {
                 result.Errors = new List<string> { context.Exception.Message };
             }
+            else if (context.Exception is AlreadyExistsException alreadyExistsException)
+            {
+                result.Errors = new List<string> { context.Exception.Message };
+            }
             else if(context.Exception is ValidateException validateException)
             {
                 result.Errors = validateException.ErrorMessage ;

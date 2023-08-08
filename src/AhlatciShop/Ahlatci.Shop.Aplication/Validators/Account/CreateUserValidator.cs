@@ -56,6 +56,10 @@ namespace Ahlatci.Shop.Aplication.Validators.Account
             RuleFor(x => x.PasswordAgain)
             .Matches(x => x.Password).WithMessage("parola tekrarı parola ile aynı olmalır");
 
+            RuleFor(x => x.Role)
+            .NotEmpty().WithMessage("role bilgisi boş bırakılamz")
+            .IsInEnum().WithMessage("role bilgisi gecerli değil (1-2)");
+
         }
     }
 }

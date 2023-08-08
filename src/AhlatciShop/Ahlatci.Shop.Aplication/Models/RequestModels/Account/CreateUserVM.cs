@@ -21,5 +21,6 @@ namespace Ahlatci.Shop.Aplication.Models.RequestModels.Account
         public string Password { get; set; }
 
         public string PasswordAgain { get; set; }
+        public Roles Role { get; set; }
     }
 }

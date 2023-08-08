@@ -2,7 +2,11 @@ C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciSho
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Aplication.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Aplication.pdb
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Domain.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.dll
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Utils.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Domain.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.pdb
+C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Utils.pdb
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\Ahlatci.Shop.Aplication.csproj.AssemblyReference.cache
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\Ahlatci.Shop.Aplication.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\Ahlatci.Shop.Aplication.AssemblyInfoInputs.cache
@@ -13,7 +17,3 @@ C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciSho
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\refint\Ahlatci.Shop.Aplication.dll
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\Ahlatci.Shop.Aplication.pdb
 C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\obj\Debug\net7.0\ref\Ahlatci.Shop.Aplication.dll
-C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.dll
-C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Persistence.pdb
-C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Utils.dll
-C:\Users\agir_\OneDrive\Masaüstü\ahlatci22\MvcCore-AhlatciShop2\src\AhlatciShop\Ahlatci.Shop.Aplication\bin\Debug\net7.0\Ahlatci.Shop.Utils.pdb

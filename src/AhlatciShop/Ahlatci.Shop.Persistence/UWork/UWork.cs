@@ -15,7 +15,7 @@ namespace Ahlatci.Shop.Persistence.UWork
     public class UWork : IUWork
     {
         private Dictionary<Type, object> _repository;
-        private readonly IServiceProvider _serviceProvider;
+       
         private readonly AhlatciContext _context;
 
 
@@ -23,7 +23,7 @@ namespace Ahlatci.Shop.Persistence.UWork
         public UWork(IServiceProvider serviceProvider, AhlatciContext context)
         {
             _repository = new Dictionary<Type, object>();
-            _serviceProvider = serviceProvider;
+           
             _context = context;
         }
 
@@ -37,7 +37,7 @@ namespace Ahlatci.Shop.Persistence.UWork
                 try
                 {
                     await _context.SaveChangesAsync();
-                   await transaction.CommitAsync();
+                    await transaction.CommitAsync();
                     result= true;
                 }
                 catch
