@@ -1,5 +1,6 @@
 ﻿using Ahlatci.Shop.Aplication.Models.RequestModels.Account;
 using Ahlatci.Shop.Aplication.Models.RequestModels.Categories;
+using Ahlatci.Shop.Aplication.Models.RequestModels.Cities;
 using Ahlatci.Shop.Domain.Entities;
 using AutoMapper;
 using System;
@@ -27,6 +28,10 @@ namespace Ahlatci.Shop.Aplication.AutoMap
                 .ForMember(x=>x.Role,y=>y.MapFrom(e=>Roles.User));
             
             CreateMap<UpdateUserVM, Customer>();
+
+            //cities
+            CreateMap<CreateCityVM, City>();
+            CreateMap<UpdateCityVM, City>();
                 
 
         }

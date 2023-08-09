@@ -1,5 +1,6 @@
 ﻿using Ahlatci.Shop.Aplication.Models.Dtos.Account;
 using Ahlatci.Shop.Aplication.Models.Dtos.Category;
+using Ahlatci.Shop.Aplication.Models.Dtos.Cities;
 using Ahlatci.Shop.Domain.Entities;
 using AutoMapper;
 using System;
@@ -18,6 +19,7 @@ namespace Ahlatci.Shop.Aplication.AutoMap
             CreateMap<Category, CategoryDto>();
             CreateMap<Customer,CustomerDto>();
             CreateMap<Account, AccounDto>();
+            CreateMap<City,CityDto>();
         }
     }
 }
