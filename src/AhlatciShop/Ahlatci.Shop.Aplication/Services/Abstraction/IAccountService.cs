@@ -12,7 +12,7 @@ namespace Ahlatci.Shop.Aplication.Services.Abstraction
 {
     public interface IAccountService
     {
-         Task<Result<bool>> Reister(CreateUserVM createUserVM);
+         Task<Result<bool>> Reister(ReisterVM reisterVM);
         Task<Result<TokenDto>> Login(LoginVM loginVM);
     }
 }

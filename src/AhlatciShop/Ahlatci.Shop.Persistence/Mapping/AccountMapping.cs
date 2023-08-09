@@ -34,6 +34,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
                  .HasColumnOrder(6);
             builder.Property(x => x.LastLoginDate)
                 .HasColumnName("LAST_LOGİN_DATE")
+                .IsRequired(false)
                 .HasColumnOrder(5);
 
             builder.Property(x => x.Role)

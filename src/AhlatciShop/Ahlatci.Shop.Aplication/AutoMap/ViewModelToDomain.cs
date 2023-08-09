@@ -21,8 +21,10 @@ namespace Ahlatci.Shop.Aplication.AutoMap
             CreateMap<UpdateCategoryVM, Category>()
                 .ForMember(x => x.Name, y => y.MapFrom(e => e.CategoryName));
             // account 
-            CreateMap<CreateUserVM, Customer>();
-            CreateMap<CreateUserVM, Account>();
+            CreateMap<ReisterVM, Customer>();
+                
+            CreateMap<ReisterVM, Account>()
+                .ForMember(x=>x.Role,y=>y.MapFrom(e=>Roles.User));
                 
 
         }

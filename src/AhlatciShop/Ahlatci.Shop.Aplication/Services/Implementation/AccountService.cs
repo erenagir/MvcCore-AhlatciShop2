@@ -46,16 +46,19 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
 
             var existsUser = await _uWork.GetRepository<Account>().GetSingleByFilterAsync(x => x.Username.Trim().ToUpper() == loginVM.Username.Trim().ToUpper()
             && x.Password == hashedPassword);
+            
             if (existsUser is null)
             {
                 throw new NotFoundException($"{loginVM.Username} kullanıcı adı bulunamadı yada şifre yanlış");
             }
+            var existsCustomer = await _uWork.GetRepository<Customer>().GetById(existsUser.CustomerId);
+
             var expireMinute = Convert.ToInt32(_configuration["Jwt:Expire"]);
 
             var expireDate = DateTime.Now.AddMinutes(expireMinute);
 
             // token üret ve return et
-            var tokenString = GenerateJwtToken(existsUser, expireDate);
+            var tokenString = GenerateJwtToken(existsUser, expireDate,existsCustomer);
             result.Data = new TokenDto
             {
                 Token=tokenString,
@@ -64,8 +67,8 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return result;
         }
 
-        [ValidationBehavior(typeof(CreateUserValidator))]
-        public async Task<Result<bool>> Reister(CreateUserVM createUserVM)
+        [ValidationBehavior(typeof(ReisterValidator))]
+        public async Task<Result<bool>> Reister(ReisterVM createUserVM)
         {
             var result = new Result<bool>();
             //await _uWork.GetRepository<Account>().AnyAsync(x => x.Username.Trim().ToUpper() == createUserVM.Username.Trim().ToUpper());
@@ -103,17 +106,17 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
        
 
 
-        private string GenerateJwtToken(Account account, DateTime expireDate)
+        private string GenerateJwtToken(Account account, DateTime expireDate,Customer customer)
         {
             var secretkey = _configuration["Jwt:SigningKey"];
             var ıssuer = _configuration["Jwt:Issuer"];
-            var audience = _configuration["Jwt:Audience"];
+            var audience = _configuration["Jwt:Audiance"];
 
 
 
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(secretkey); // appsettings.json içinde JWT ayarlarınızı yapmalısınız
+            var key = Encoding.UTF8.GetBytes(secretkey); // appsettings.json içinde JWT ayarlarınızı yapmalısınız
 
             var tokenDescriptor = new SecurityTokenDescriptor
             {
@@ -123,7 +126,10 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
                 Subject = new ClaimsIdentity(new[]
                 {
                     new Claim(ClaimTypes.Name,account.Username),
-                    new Claim(ClaimTypes.Role,((int)account.Role).ToString())
+                    new Claim(ClaimTypes.Role,account.Role.ToString()),
+                    new Claim(ClaimTypes.Email,customer.Email),
+                    
+                    new Claim(ClaimTypes.Surname,customer.Surname),
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
