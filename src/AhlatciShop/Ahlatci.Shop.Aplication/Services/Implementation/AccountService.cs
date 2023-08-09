@@ -45,20 +45,20 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             var hashedPassword = CipherUtils.EncryptString(_configuration["AppSettings:SecretKey"], loginVM.Password);
 
             var existsUser = await _uWork.GetRepository<Account>().GetSingleByFilterAsync(x => x.Username.Trim().ToUpper() == loginVM.Username.Trim().ToUpper()
-            && x.Password == hashedPassword);
+            && x.Password == hashedPassword,"Customer");
             
             if (existsUser is null)
             {
                 throw new NotFoundException($"{loginVM.Username} kullanıcı adı bulunamadı yada şifre yanlış");
             }
-            var existsCustomer = await _uWork.GetRepository<Customer>().GetById(existsUser.CustomerId);
+            
 
             var expireMinute = Convert.ToInt32(_configuration["Jwt:Expire"]);
 
             var expireDate = DateTime.Now.AddMinutes(expireMinute);
 
             // token üret ve return et
-            var tokenString = GenerateJwtToken(existsUser, expireDate,existsCustomer);
+            var tokenString = GenerateJwtToken(existsUser, expireDate);
             result.Data = new TokenDto
             {
                 Token=tokenString,
@@ -67,6 +67,7 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
             return result;
         }
 
+        
         [ValidationBehavior(typeof(ReisterValidator))]
         public async Task<Result<bool>> Reister(ReisterVM createUserVM)
         {
@@ -102,11 +103,20 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
 
             return result;
         }
+        
+        
+        [ValidationBehavior(typeof(UpdateUserValidator))]
+        public async Task<Result<bool>> UpdateUser(UpdateUserVM updateVM)
+        {
+            var result = new Result<bool>();
+            var customerEntity=_mapper.Map(updateVM,await _uWork.GetRepository<Customer>().GetById(updateVM.Id));
 
-       
+            _uWork.GetRepository<Customer>().Update(customerEntity);
+            result.Data= await _uWork.ComitAsync();
+            return result;
+        }
 
-
-        private string GenerateJwtToken(Account account, DateTime expireDate,Customer customer)
+        private string GenerateJwtToken(Account account, DateTime expireDate)
         {
             var secretkey = _configuration["Jwt:SigningKey"];
             var ıssuer = _configuration["Jwt:Issuer"];
@@ -127,9 +137,9 @@ namespace Ahlatci.Shop.Aplication.Services.Implementation
                 {
                     new Claim(ClaimTypes.Name,account.Username),
                     new Claim(ClaimTypes.Role,account.Role.ToString()),
-                    new Claim(ClaimTypes.Email,customer.Email),
+                    new Claim(ClaimTypes.Email,account.Customer.Email),
                     
-                    new Claim(ClaimTypes.Surname,customer.Surname),
+                    new Claim(ClaimTypes.Sid,account.CustomerId.ToString()),
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

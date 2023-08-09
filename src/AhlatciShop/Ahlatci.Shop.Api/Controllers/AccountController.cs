@@ -23,7 +23,7 @@ namespace Ahlatci.Shop.Api.Controllers
 
         
         [HttpPost("reister")]
-        [Authorize(Roles="User")]
+        [AllowAnonymous]
         public async Task<ActionResult<Result<bool>>> Reister(ReisterVM reisterVM)
         {
             var result = await _accountService.Reister(reisterVM);
@@ -36,6 +36,12 @@ namespace Ahlatci.Shop.Api.Controllers
             var result = await _accountService.Login(loginVM);
             return Ok(result);
         }
-
+        [HttpPost("update")]
+        
+        public async Task<ActionResult<Result<bool>>> update(UpdateUserVM updateUserVM)
+        {
+            var result = await _accountService.UpdateUser(updateUserVM);
+            return Ok(result);
+        }
     }
 }

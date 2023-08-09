@@ -8,6 +8,8 @@ C:\Users\agir_\.nuget\packages\azure.core\1.24.0\lib\net5.0\Azure.Core.dll
 C:\Users\agir_\.nuget\packages\azure.identity\1.6.0\lib\netstandard2.0\Azure.Identity.dll
 C:\Users\agir_\.nuget\packages\fluentvalidation.dependencyinjectionextensions\11.6.0\lib\netstandard2.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\agir_\.nuget\packages\fluentvalidation\11.6.0\lib\net7.0\FluentValidation.dll
+C:\Users\agir_\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\agir_\.nuget\packages\microsoft.aspnetcore.http.features\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll
 C:\Users\agir_\.nuget\packages\microsoft.bcl.asyncinterfaces\1.1.1\ref\netstandard2.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\7.0.7\ref\net7.0\Microsoft.CSharp.dll
 C:\Users\agir_\.nuget\packages\microsoft.data.sqlclient\5.0.2\ref\netcoreapp3.1\Microsoft.Data.SqlClient.dll

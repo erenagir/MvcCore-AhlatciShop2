@@ -4,6 +4,8 @@ using Ahlatci.Shop.Aplication.Services.Abstraction;
 using Ahlatci.Shop.Aplication.Services.Implementation;
 using Ahlatci.Shop.Aplication.Validators.Category;
 using Ahlatci.Shop.Domain.Repositories;
+using Ahlatci.Shop.Domain.Service.Abstraction;
+using Ahlatci.Shop.Domain.Service.Implementation;
 using Ahlatci.Shop.Domain.UWork;
 using Ahlatci.Shop.Persistence.Context;
 using Ahlatci.Shop.Persistence.Repository;
@@ -83,6 +85,7 @@ builder.Services.AddDbContext<AhlatciContext>(opt =>
 // business service Registiration
 builder.Services.AddScoped<ICategoryService, CategorySevice>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<ILoggedUserService,LoggedUserService>();
 
 //automapper
 builder.Services.AddAutoMapper(typeof(DomainToDtoModel), typeof(ViewModelToDomain));
@@ -106,8 +109,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SigningKey"]))
            };
        });
-
-
+// calýþma anýnda http verilerine eriþim için
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

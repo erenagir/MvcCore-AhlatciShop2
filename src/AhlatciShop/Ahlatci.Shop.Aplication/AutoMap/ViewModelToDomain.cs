@@ -25,6 +25,8 @@ namespace Ahlatci.Shop.Aplication.AutoMap
                 
             CreateMap<ReisterVM, Account>()
                 .ForMember(x=>x.Role,y=>y.MapFrom(e=>Roles.User));
+            
+            CreateMap<UpdateUserVM, Customer>();
                 
 
         }

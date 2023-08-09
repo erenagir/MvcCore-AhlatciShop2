@@ -1,13 +1,22 @@
-﻿using Ahlatci.Shop.Domain.Common;
+﻿
+using Ahlatci.Shop.Domain.Common;
 using Ahlatci.Shop.Domain.Entities;
+using Ahlatci.Shop.Domain.Service.Abstraction;
 using Ahlatci.Shop.Persistence.Mapping;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace Ahlatci.Shop.Persistence.Context
 {
     public class AhlatciContext : DbContext
     {
-        public AhlatciContext(DbContextOptions<AhlatciContext> options) : base(options) { }
+        private readonly ILoggedUserService _loggedUserService;
+
+        public AhlatciContext(DbContextOptions<AhlatciContext> options, ILoggedUserService loggedUserService) : base(options)
+        {
+            _loggedUserService = loggedUserService;
+        }
 
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Address> Addresses { get; set; }
@@ -33,7 +42,7 @@ namespace Ahlatci.Shop.Persistence.Context
             modelBuilder.ApplyConfiguration(new ProductMapping());
             modelBuilder.ApplyConfiguration(new ProductImageMapping());
 
-            modelBuilder.Entity<Account>().HasQueryFilter(x => x.IsDeleted==null || ( x.IsDeleted.HasValue && !x.IsDeleted.Value));
+            modelBuilder.Entity<Account>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
             modelBuilder.Entity<Address>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
             modelBuilder.Entity<Category>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
             modelBuilder.Entity<City>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
@@ -43,7 +52,7 @@ namespace Ahlatci.Shop.Persistence.Context
             modelBuilder.Entity<OrderDetail>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
             modelBuilder.Entity<Product>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
             modelBuilder.Entity<ProductImage>().HasQueryFilter(x => x.IsDeleted == null || (x.IsDeleted.HasValue && !x.IsDeleted.Value));
-          
+
 
         }
 
@@ -56,19 +65,19 @@ namespace Ahlatci.Shop.Persistence.Context
                     //update
                     case EntityState.Modified:
                         entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy = "admin";
+                        entry.Entity.modifiedBy =_loggedUserService.UserName ?? "admin";
                         break;
                     //insert
                     case EntityState.Added:
                         entry.Entity.CreateDate = DateTime.Now;
-                        entry.Entity.CreatedBy = "admin";
+                        entry.Entity.CreatedBy = _loggedUserService.UserName ?? "admin";
                         entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy = "admin";
+                        entry.Entity.modifiedBy = _loggedUserService.UserName ?? "admin";
                         break;
                     case EntityState.Deleted:
                         entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy = "admin";
-                        entry.Entity.IsDeleted= true;
+                        entry.Entity.modifiedBy = _loggedUserService.UserName ?? "admin";
+                        entry.Entity.IsDeleted = true;
                         entry.State = EntityState.Modified;
                         break;
                     default:
