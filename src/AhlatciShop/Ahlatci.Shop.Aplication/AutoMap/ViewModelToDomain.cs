@@ -23,16 +23,18 @@ namespace Ahlatci.Shop.Aplication.AutoMap
                 .ForMember(x => x.Name, y => y.MapFrom(e => e.CategoryName));
             // account 
             CreateMap<ReisterVM, Customer>();
-                
+
             CreateMap<ReisterVM, Account>()
-                .ForMember(x=>x.Role,y=>y.MapFrom(e=>Roles.User));
-            
+                .ForMember(x => x.Role, y => y.MapFrom(e => Roles.User));
+
             CreateMap<UpdateUserVM, Customer>();
 
             //cities
-            CreateMap<CreateCityVM, City>();
-            CreateMap<UpdateCityVM, City>();
-                
+            CreateMap<CreateCityVM, City>()
+                .ForMember(x => x.Name, y => y.MapFrom(e => e.Name.ToUpper()));
+            CreateMap<UpdateCityVM, City>()
+                 .ForMember(x => x.Name, y => y.MapFrom(e => e.Name.ToUpper()));
+
 
         }
     }

@@ -8,5 +8,6 @@ namespace Ahlatci.Shop.Aplication.Models.RequestModels.Cities
 {
     public class CreateCityVM
     {
+        public String Name { get; set; }
     }
 }

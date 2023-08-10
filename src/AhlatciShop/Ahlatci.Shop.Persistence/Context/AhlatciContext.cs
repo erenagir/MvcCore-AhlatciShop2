@@ -58,34 +58,44 @@ namespace Ahlatci.Shop.Persistence.Context
 
         public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
         {
-            foreach (var entry in ChangeTracker.Entries<AuditableEntity>().ToList())
+            var entries = ChangeTracker.Entries<BaseEntity>().ToList();
+
+            foreach (var entry in entries)
             {
-                switch (entry.State)
+                if (entry.State == EntityState.Deleted)
                 {
-                    //update
-                    case EntityState.Modified:
-                        entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy =_loggedUserService.UserName ?? "admin";
-                        break;
-                    //insert
-                    case EntityState.Added:
-                        entry.Entity.CreateDate = DateTime.Now;
-                        entry.Entity.CreatedBy = _loggedUserService.UserName ?? "admin";
-                        entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy = _loggedUserService.UserName ?? "admin";
-                        break;
-                    case EntityState.Deleted:
-                        entry.Entity.ModifiedDate = DateTime.Now;
-                        entry.Entity.modifiedBy = _loggedUserService.UserName ?? "admin";
-                        entry.Entity.IsDeleted = true;
-                        entry.State = EntityState.Modified;
-                        break;
-                    default:
-                        break;
+                    entry.Entity.IsDeleted = true;
+                    entry.State = EntityState.Modified;
                 }
 
-            }
+                if(entry.Entity is AuditableEntity auditableEntity)
+                {
+                    switch (entry.State)
+                    {
+                        //update
+                        case EntityState.Modified:
+                            auditableEntity.ModifiedDate = DateTime.Now;
+                            auditableEntity.modifiedBy = _loggedUserService.UserName ?? "admin";
+                            break;
+                        //insert
+                        case EntityState.Added:
+                            auditableEntity.CreateDate = DateTime.Now;
+                            auditableEntity.CreatedBy = _loggedUserService.UserName ?? "admin";
+                            auditableEntity.ModifiedDate = DateTime.Now;
+                            auditableEntity.modifiedBy = _loggedUserService.UserName ?? "admin";
+                            break;
+                        //case EntityState.Deleted:
+                        //    auditableEntity.ModifiedDate = DateTime.Now;
+                        //    auditableEntity.modifiedBy = _loggedUserService.UserName ?? "admin";
+                        //    entry.Entity.IsDeleted = true;
+                        //    entry.State = EntityState.Modified;
+                        //    break;
+                        default:
+                            break;
+                    }
 
+                }
+            }
 
             return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
         }
