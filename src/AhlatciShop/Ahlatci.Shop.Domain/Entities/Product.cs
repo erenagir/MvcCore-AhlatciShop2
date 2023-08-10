@@ -16,3 +16,5 @@ namespace Ahlatci.Shop.Domain.Entities
         public ICollection<Comment> Comments { get; set; }
     }
 }
+
+

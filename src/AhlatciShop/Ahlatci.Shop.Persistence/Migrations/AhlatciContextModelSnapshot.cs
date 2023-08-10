@@ -537,7 +537,7 @@ namespace Ahlatci.Shop.Persistence.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("nvarchar(255)")
+                        .HasColumnType("nvarchar(25)")
                         .HasColumnName("NAME")
                         .HasColumnOrder(3);
 

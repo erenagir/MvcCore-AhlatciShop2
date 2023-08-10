@@ -54,7 +54,7 @@ namespace Ahlatci.Shop.Persistence.Repository
             return await query.FirstOrDefaultAsync(filter);
         }
 
-        public async Task<T> GetById(object id)
+        public async Task<T> GetById(object id )
         {
 
             var entity = await _dbSet.FindAsync(id);
