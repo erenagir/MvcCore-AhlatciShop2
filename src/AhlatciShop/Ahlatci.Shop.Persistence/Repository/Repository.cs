@@ -25,6 +25,7 @@ namespace Ahlatci.Shop.Persistence.Repository
                     query = _dbSet.Include(includeColumn);
                 }
             }
+           
             return await Task.FromResult(query);
         }
 

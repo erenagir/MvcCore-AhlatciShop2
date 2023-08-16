@@ -17,7 +17,7 @@ namespace Ahlatci.Shop.Aplication.Validators.Product
             
             RuleFor(x => x.Name)
                 .NotEmpty().WithMessage("ürün adı boş bırakılamaz .")
-                .MaximumLength(20).WithMessage("Şehir adı en fazla 25 karakter olabilir");
+                .MaximumLength(255).WithMessage("Şehir adı en fazla 255 karakter olabilir");
             RuleFor(x => x.CategoryId)
                .NotEmpty().WithMessage("category id boş bırakılamaz .")
                .GreaterThan(0).WithMessage("categori id 0 dan büyük olmalıdır");

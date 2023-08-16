@@ -7,12 +7,14 @@ using Ahlatci.Shop.Aplication.Services.Abstraction;
 using Ahlatci.Shop.Aplication.Validators.Product;
 using Ahlatci.Shop.Aplication.Wrapper;
 using Ahlatci.Shop.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ahlatci.Shop.Api.Controllers
 {
     [ApiController]
     [Route("product")]
+    [Authorize(Roles="Admin")]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -23,15 +25,15 @@ namespace Ahlatci.Shop.Api.Controllers
         }
 
         [HttpGet("get")]
-
+        [AllowAnonymous]
         public async Task<ActionResult<Result<List<ProductDto>>>> GetAllProducts()
         {
-            var Products =await _productService.GetAllProduct();
+            var Products =await _productService.GetAllProduct ();
            return Ok(Products);
         }
         [HttpGet("get/{id:int}")]
-
-        public async Task<ActionResult<Result<ProductDto>>> GetCategoryById(int id)
+        [AllowAnonymous]
+        public async Task<ActionResult<Result<ProductDto>>> GetProductById(int id)
         {
             var city = await _productService.GetProductById(id);
             return Ok(city);

@@ -15,6 +15,6 @@ namespace Ahlatci.Shop.Aplication.Services.Abstraction
         Task<Result<CityDto>> GetCityId(int id);
         Task<Result<int>> CreateCity(CreateCityVM createCityVM);
         Task<Result<bool>> UpdateCity(UpdateCityVM updateCityVM);
-        Task<Result<bool>> DeleteCity(int id);
+        Task<Result<int>> UpdateCity(int id);
     }
 }

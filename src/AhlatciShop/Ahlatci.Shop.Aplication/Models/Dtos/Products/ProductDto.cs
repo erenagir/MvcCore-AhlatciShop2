@@ -16,6 +16,8 @@ namespace Ahlatci.Shop.Aplication.Models.Dtos.Products
         public int UnitInStock { get; set; }
         public decimal UnitPrice { get; set; }
         public string CategoryName { get; set; }
+        
+        
         //navigation property
         //public CategoryDto Category { get; set; }
 

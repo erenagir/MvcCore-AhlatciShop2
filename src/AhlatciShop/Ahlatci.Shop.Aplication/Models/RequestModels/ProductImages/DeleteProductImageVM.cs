@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ahlatci.Shop.Aplication.Models.RequestModels.Cities
+namespace Ahlatci.Shop.Aplication.Models.RequestModels.ProductImages
 {
-    public class CreateCityVM
+    public class DeleteProductImageVM
     {
         public int Id { get; set; }
-        public string Name { get; set; }
     }
 }
