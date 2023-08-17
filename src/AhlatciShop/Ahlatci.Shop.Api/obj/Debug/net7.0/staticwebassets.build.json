@@ -1,11 +1,19 @@
 {
   "Version": 1,
-  "Hash": "WVh4Y7wkm3Ub5h74T9vlH9TgSgFujQchKuGm/z9mRD0=",
+  "Hash": "1vxA/zUflh27hdcFRXyu4GyWhxoNPShBkGMNvXy4Kh8=",
   "Source": "Ahlatci.Shop.Api",
   "BasePath": "_content/Ahlatci.Shop.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Ahlatci.Shop.Api\\wwwroot",
+      "Source": "Ahlatci.Shop.Api",
+      "ContentRoot": "C:\\Users\\agir_\\OneDrive\\Masaüstü\\ahlatci22\\MvcCore-AhlatciShop2\\src\\AhlatciShop\\Ahlatci.Shop.Api\\wwwroot\\",
+      "BasePath": "_content/Ahlatci.Shop.Api",
+      "Pattern": "**"
+    }
+  ],
   "Assets": []
 }

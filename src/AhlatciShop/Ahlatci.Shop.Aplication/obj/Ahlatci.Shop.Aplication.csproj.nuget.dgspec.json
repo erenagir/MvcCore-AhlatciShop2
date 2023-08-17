@@ -74,6 +74,10 @@
               "target": "Package",
               "version": "[11.6.0, )"
             },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
             "MrAdvice": {
               "target": "Package",
               "version": "[2.12.2, )"
@@ -81,10 +85,6 @@
             "Serilog": {
               "target": "Package",
               "version": "[3.0.1, )"
-            },
-            "System.Security.Claims": {
-              "target": "Package",
-              "version": "[4.3.0, )"
             }
           },
           "imports": [

@@ -86,6 +86,7 @@ builder.Services.AddDbContext<AhlatciContext>(opt =>
 builder.Services.AddScoped<ICategoryService, CategorySevice>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<ILoggedUserService,LoggedUserService>();
+builder.Services.AddScoped<IProductImageService,ProductImageService>();
 
 builder.Services.AddScoped<ICityService, CityService>();
 builder.Services.AddScoped<IProductService, ProductService>();
@@ -132,5 +133,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+// kalýcý olarak saklanacak dosyalar için kayýt yeri ayarlama 
+app.UseStaticFiles();
+
 
 app.Run();

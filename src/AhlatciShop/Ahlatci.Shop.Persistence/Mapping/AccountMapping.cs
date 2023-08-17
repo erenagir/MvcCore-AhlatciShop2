@@ -39,7 +39,7 @@ namespace Ahlatci.Shop.Persistence.Mapping
 
             builder.Property(x => x.Role)
                 .HasColumnName("ROlE_ID")
-                .HasColumnOrder(7);
+                .HasColumnOrder(6);
 
             builder.HasOne(x => x.Customer)
                 .WithOne(x => x.Account)
